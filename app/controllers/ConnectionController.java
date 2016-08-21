@@ -33,14 +33,12 @@ public class ConnectionController  extends Controller {
             User.db().update(sender);
 
             User receiver = User.find.byId(connectionRequest.receiver.id);
-            receiver.connectionRequestRecieved.add(connectionRequest);
+            receiver.connectionRequestReceived.add(connectionRequest);
             User.db().update(receiver);
         }
 
         return ok();
     }
-
-
 
     public Result acceptConnectionRequest(Long requestId){
 
