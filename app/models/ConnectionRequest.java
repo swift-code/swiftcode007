@@ -18,6 +18,7 @@ public class ConnectionRequest extends Model {
     @ManyToOne
     public User receiver;
     public Status status;
+    public static Finder<Long,ConnectionRequest> find = new Finder<Long,ConnectionRequest>(ConnectionRequest.class);
     public enum Status {
         @EnumValue(value="WAITING")
         WAITING,
